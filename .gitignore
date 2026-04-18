@@ -1,0 +1,7 @@
+.env
+.env.example
+__pycache__/
+*.pyc
+.vscode/
+venv/
+app_debug.log
