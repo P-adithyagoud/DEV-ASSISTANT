@@ -1,7 +1,7 @@
 import json
 import os
 import sys
-from app.services.vector_db import VectorDBService
+from services.vector_db import VectorDBService
 
 def preload_knowledge_base():
     """

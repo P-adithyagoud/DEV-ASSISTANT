@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, jsonify
-from app.services.vector_db import VectorDBService
-from app.services.llm import LLMService
-from app.services.embedding import EmbeddingService
+from services.vector_db import VectorDBService
+from services.llm import LLMService
+from services.embedding import EmbeddingService
 import os
 
-app = Flask(__name__, 
-            template_folder='app/templates',
-            static_folder='app/static')
+# Application Entry Point
+app = Flask(__name__)
 
 class IncidentCommander:
     def __init__(self):
@@ -19,7 +18,6 @@ class IncidentCommander:
         similar_cases = self.vdb.recall_similar(query)
         recovery_plan = self.llm.analyze_incident(raw_logs, similar_cases)
         
-        # Structure the response for the frontend
         return {
             "analysis": recovery_plan,
             "similar_incidents_count": len(similar_cases)

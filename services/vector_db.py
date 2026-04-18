@@ -1,5 +1,5 @@
 from hindsight_client import Hindsight
-from app.config import HINDSIGHT_URL, VECTORIZE_API_KEY
+from config import HINDSIGHT_URL, VECTORIZE_API_KEY
 
 class VectorDBService:
     """
